@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/krishnagupta/Documents/Projects/untitled%20folder/smart-public-complaint-portal/app/loading.tsx"],"sourcesContent":["import { motion } from \"framer-motion\";\n\nexport default function Loading() {\n  return (\n    <div className=\"flex min-h-screen items-center justify-center bg-slate-950/10 p-6 dark:bg-slate-950\">\n     \n    </div>\n  );\n}\n"],"names":["Loading","className"],"mappings":";;;;;;AAEe,SAASA;IACtB,qBACE,8OAAC;QAAIC,WAAU;;;;;;AAInB"}}]
+}
