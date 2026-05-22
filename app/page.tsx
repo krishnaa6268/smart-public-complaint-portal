@@ -40,7 +40,7 @@ const features = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.12),_transparent_35%),linear-gradient(180deg,#f8fbff_0%,#eef5ff_38%,#f8fafc_100%)] text-slate-900 dark:bg-[#020617] dark:text-slate-100">
+    <div className="min-h-screen bg-red-950 text-slate-900 dark:bg-[#020617] dark:text-slate-100">
       <header className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-6 sm:px-6 lg:px-8">
         <div>
           <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm shadow-slate-900/5 backdrop-blur dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100">

@@ -200,12 +200,14 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-950: #460809;
     --color-amber-100: #fef3c6;
     --color-amber-200: #fee685;
     --color-amber-700: #b75000;
     --color-amber-900: #7b3306;
     --color-emerald-100: #d0fae5;
     --color-emerald-200: #a4f4cf;
+    --color-emerald-400: #00d294;
     --color-emerald-700: #007956;
     --color-emerald-900: #004e3b;
     --color-sky-50: #f0f9ff;
@@ -240,6 +242,7 @@
     --color-slate-950: #020618;
     --color-white: #fff;
     --spacing: .25rem;
+    --container-xl: 36rem;
     --container-2xl: 42rem;
     --container-3xl: 48rem;
     --container-6xl: 72rem;
@@ -264,6 +267,8 @@
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -272,6 +277,7 @@
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
     --blur-xl: 24px;
+    --blur-3xl: 64px;
     --default-transition-duration: .15s;
     --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     --default-font-family: var(--font-sans);
@@ -280,12 +286,14 @@
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
+      --color-red-950: lab(13.003% 29.04 16.7519);
       --color-amber-100: lab(95.916% -1.21653 23.111);
       --color-amber-200: lab(91.7203% -.505269 49.9084);
       --color-amber-700: lab(47.2709% 42.9082 69.2966);
       --color-amber-900: lab(31.2288% 30.2627 40.0378);
       --color-emerald-100: lab(94.9004% -17.0769 5.63836);
       --color-emerald-200: lab(90.2247% -31.039 9.47084);
+      --color-emerald-400: lab(75.0771% -60.7313 19.4147);
       --color-emerald-700: lab(44.4871% -41.0396 11.0361);
       --color-emerald-900: lab(28.8637% -26.9249 5.45986);
       --color-sky-50: lab(97.3623% -2.33802 -4.13098);
@@ -595,8 +603,28 @@
     top: calc(var(--spacing) * 4);
   }
 
+  .top-8 {
+    top: calc(var(--spacing) * 8);
+  }
+
+  .-right-10 {
+    right: calc(var(--spacing) * -10);
+  }
+
   .right-4 {
     right: calc(var(--spacing) * 4);
+  }
+
+  .bottom-8 {
+    bottom: calc(var(--spacing) * 8);
+  }
+
+  .-left-10 {
+    left: calc(var(--spacing) * -10);
+  }
+
+  .z-10 {
+    z-index: 10;
   }
 
   .z-50 {
@@ -707,6 +735,14 @@
     height: calc(var(--spacing) * 12);
   }
 
+  .h-24 {
+    height: calc(var(--spacing) * 24);
+  }
+
+  .h-28 {
+    height: calc(var(--spacing) * 28);
+  }
+
   .h-full {
     height: 100%;
   }
@@ -751,6 +787,14 @@
     width: calc(var(--spacing) * 12);
   }
 
+  .w-24 {
+    width: calc(var(--spacing) * 24);
+  }
+
+  .w-28 {
+    width: calc(var(--spacing) * 28);
+  }
+
   .w-full {
     width: 100%;
   }
@@ -773,6 +817,10 @@
 
   .max-w-7xl {
     max-width: var(--container-7xl);
+  }
+
+  .max-w-xl {
+    max-width: var(--container-xl);
   }
 
   .min-w-\[170px\] {
@@ -1029,6 +1077,20 @@
     background-color: var(--color-emerald-100);
   }
 
+  .bg-emerald-400\/20 {
+    background-color: #00d29433;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-emerald-400\/20 {
+      background-color: color-mix(in oklab, var(--color-emerald-400) 20%, transparent);
+    }
+  }
+
+  .bg-red-950 {
+    background-color: var(--color-red-950);
+  }
+
   .bg-rose-50\/80 {
     background-color: #fff1f2cc;
   }
@@ -1072,6 +1134,16 @@
   @supports (color: color-mix(in lab, red, red)) {
     .bg-sky-500\/10 {
       background-color: color-mix(in oklab, var(--color-sky-500) 10%, transparent);
+    }
+  }
+
+  .bg-sky-500\/20 {
+    background-color: #00a5ef33;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-sky-500\/20 {
+      background-color: color-mix(in oklab, var(--color-sky-500) 20%, transparent);
     }
   }
 
@@ -1379,6 +1451,10 @@
     padding-inline: calc(var(--spacing) * 6);
   }
 
+  .px-7 {
+    padding-inline: calc(var(--spacing) * 7);
+  }
+
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
   }
@@ -1401,6 +1477,10 @@
 
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
+  }
+
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
   }
 
   .py-20 {
@@ -1437,6 +1517,11 @@
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+
+  .text-6xl {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
   }
 
   .text-base {
@@ -1527,6 +1612,11 @@
   .tracking-\[0\.28em\] {
     --tw-tracking: .28em;
     letter-spacing: .28em;
+  }
+
+  .tracking-\[0\.32em\] {
+    --tw-tracking: .32em;
+    letter-spacing: .32em;
   }
 
   .tracking-tight {
@@ -1646,6 +1736,11 @@
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 
+  .shadow-\[0_30px_80px_rgba\(15\,23\,42\,0\.12\)\] {
+    --tw-shadow: 0 30px 80px var(--tw-shadow-color, #0f172a1f);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
   .shadow-\[0_50px_120px_rgba\(15\,23\,42\,0\.12\)\] {
     --tw-shadow: 0 50px 120px var(--tw-shadow-color, #0f172a1f);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -1754,6 +1849,11 @@
     .ring-slate-800\/50 {
       --tw-ring-color: color-mix(in oklab, var(--color-slate-800) 50%, transparent);
     }
+  }
+
+  .blur-3xl {
+    --tw-blur: blur(var(--blur-3xl));
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
   }
 
   .filter {
@@ -1874,6 +1974,10 @@
     --tw-ring-color: var(--color-sky-200);
   }
 
+  .focus\:ring-sky-500:focus {
+    --tw-ring-color: var(--color-sky-500);
+  }
+
   .focus\:ring-sky-500\/20:focus {
     --tw-ring-color: #00a5ef33;
   }
@@ -1882,6 +1986,11 @@
     .focus\:ring-sky-500\/20:focus {
       --tw-ring-color: color-mix(in oklab, var(--color-sky-500) 20%, transparent);
     }
+  }
+
+  .focus\:ring-offset-2:focus {
+    --tw-ring-offset-width: 2px;
+    --tw-ring-offset-shadow: var(--tw-ring-inset, ) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   }
 
   .focus\:outline-none:focus {
@@ -1978,6 +2087,13 @@
     .sm\:text-6xl {
       font-size: var(--text-6xl);
       line-height: var(--tw-leading, var(--text-6xl--line-height));
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:text-7xl {
+      font-size: var(--text-7xl);
+      line-height: var(--tw-leading, var(--text-7xl--line-height));
     }
   }
 
@@ -2518,7 +2634,7 @@ body {
 
 html.dark body {
   color: #f8fafc;
-  background: #020617;
+  background: #bd126d;
 }
 
 button, input, textarea, select {

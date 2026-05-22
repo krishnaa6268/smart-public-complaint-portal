@@ -5,14 +5,12 @@ import { useEffect, useState } from "react";
 const STORAGE_KEY = "smart-portal-theme";
 
 export const useDarkMode = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    const initial = stored
-      ? stored === "dark"
-      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initial = stored ? stored === "dark" : true;
     setDarkMode(initial);
   }, []);
 

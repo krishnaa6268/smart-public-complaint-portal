@@ -291,13 +291,13 @@ var _s = __turbopack_context__.k.signature();
 const STORAGE_KEY = "smart-portal-theme";
 const useDarkMode = ()=>{
     _s();
-    const [darkMode, setDarkMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [darkMode, setDarkMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "useDarkMode.useEffect": ()=>{
             if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
             ;
             const stored = window.localStorage.getItem(STORAGE_KEY);
-            const initial = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const initial = stored ? stored === "dark" : true;
             setDarkMode(initial);
         }
     }["useDarkMode.useEffect"], []);
@@ -316,7 +316,7 @@ const useDarkMode = ()=>{
         setDarkMode
     };
 };
-_s(useDarkMode, "jxWvogfm97D9w3+yMzVp/epPJCw=");
+_s(useDarkMode, "CClh81HlGfUWba1zIAGqfndPicc=");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

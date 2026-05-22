@@ -283,7 +283,7 @@ export default function RegisterPage() {
                 ) : null}
               </div>
 
-              <div>
+              {/* <div>
                 <label className="mb-2 block text-sm font-semibold text-slate-900 dark:text-slate-100">
                   Upload Image (optional)
                 </label>
@@ -320,7 +320,7 @@ export default function RegisterPage() {
                     />
                   </div>
                 ) : null}
-              </div>
+              </div> */}
 
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-sm text-slate-600 dark:text-slate-400">
